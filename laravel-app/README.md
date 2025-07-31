@@ -1,4 +1,4 @@
-This project is a RESTful API built with Laravel 12 to manage:
+This project is a RESTful API built with Laravel 11 to manage:
 
 Basic user authentication (register, login, logout)
 
