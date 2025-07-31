@@ -130,7 +130,6 @@ GET /api/plans
 Initiate Stripe checkout
 
 POST /api/checkout/stripe
-Authorization: Bearer <token>
 Content-Type: application/json
 
 {
@@ -142,7 +141,6 @@ Response: { "url": "<payment_url>" }
 Initiate PayPal checkout
 
 POST /api/checkout/paypal
-Authorization: Bearer <token>
 Content-Type: application/json
 
 {

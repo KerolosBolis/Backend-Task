@@ -1,0 +1,105 @@
+{
+  "info": {
+    "name": "Laravel Subscription API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "abcd1234-5678-90ab-cdef-1234567890ab"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"password\",\n  \"password_confirmation\": \"password\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/api/register", "host": ["{{base_url}}"], "path": ["api", "register"] }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/api/login", "host": ["{{base_url}}"], "path": ["api", "login"] }
+      }
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{auth_token}}" },
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/logout", "host": ["{{base_url}}"], "path": ["api", "logout"] }
+      }
+    },
+    {
+      "name": "View Plans",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/plans", "host": ["{{base_url}}"], "path": ["api", "plans"] }
+      }
+    },
+    {
+      "name": "Checkout Stripe",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"plan_id\": 1\n}"
+        },
+        "url": { "raw": "{{base_url}}/api/checkout/stripe", "host": ["{{base_url}}"], "path": ["api", "checkout", "stripe"] }
+      }
+    },
+    {
+      "name": "Checkout PayPal",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"plan_id\": 1\n}"
+        },
+        "url": { "raw": "{{base_url}}/api/checkout/paypal", "host": ["{{base_url}}"], "path": ["api", "checkout", "paypal"] }
+      }
+    },
+    {
+      "name": "My Transactions",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{auth_token}}" },
+          { "key": "Accept", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/my-transactions", "host": ["{{base_url}}"], "path": ["api", "my-transactions"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://127.0.0.1:8000" },
+    { "key": "auth_token", "value": "" }
+  ]
+}
